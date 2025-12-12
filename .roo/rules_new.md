@@ -1,8 +1,0 @@
-"# Roo Code Rules - Kimi K2 Configuration"  
-""  
-"## Provider Settings"  
-"**Provider**: OpenAI Compatible"  
-"**Base URL**: https://api.kimi.com/coding/v1"  
-"**Model**: kimi-for-coding"  
-"**Max Output**: 16384"  
-"**Reasoning**: Medium" 
