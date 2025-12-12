@@ -78,26 +78,68 @@ If you get an error, check:
 
 ## 📁 Files to Copy to Your Project
 
-### For ACP Simulation Projects
+### For New Projects
 
 Copy these files to your project root:
 
 ```bash
-# From this playbook package:
-cp kimi-k2-playbook-v4.1.0/docs/PLAYBOOK.md /path/to/your/project/
-cp kimi-k2-playbook-v4.1.0/ZENODO_DESCRIPTION_v4.1.0.md /path/to/your/project/
+# Copy configuration files
+cp .clinerules /path/to/your/project/
+cp -r .roo /path/to/your/project/
 
-# Optional: Copy for reference
-cp kimi-k2-playbook-v4.1.0/ZENODO_METADATA_GUIDE_v4.1.0.md /path/to/your/project/
+# Copy documentation for reference
+cp PLAYBOOK.md /path/to/your/project/
+cp INSTALLATION_GUIDE.md /path/to/your/project/
+cp EVERYDAY_USE_CASES.md /path/to/your/project/
 ```
 
-### For Other Projects
+### Configuration Files Explained
 
-Use the configuration template:
+**`.clinerules`** - Critical AI assistant instructions:
+- 18-step limit enforcement
+- Context-first loading strategy
+- Boomerang handoff pattern
+- 95% success threshold within 18 steps
+- Error loop prevention
 
-1. Create `.roo/` directory in your project
-2. Copy playbook: `cp kimi-k2-playbook-v4.1.0/docs/PLAYBOOK.md .roo/`
-3. Reference it in your project documentation
+**`.roo/rules.md`** - Roo Code specific configuration:
+- Kimi K2 endpoint settings
+- Token efficiency rules
+- Context management strategy
+- Financial safety rails ($5/day budget)
+- Mode engineering (Architect/Code/Orchestrator)
+- Prompt caching strategies
+- Hybrid model recommendations
+
+---
+
+## 🔧 Optional: LiteLLM Proxy Setup (Enterprise)
+
+For enterprise teams, routing requests through LiteLLM provides additional control:
+
+### Why Use LiteLLM?
+- Per-user/project budget tracking
+- Rate limiting
+- Parameter remapping (max_completion_tokens to max_tokens)
+- Centralized cost monitoring
+
+### Installation
+```bash
+# Install LiteLLM
+pip install litellm
+
+# Run proxy
+litellm --model moonshot/kimi-k2-thinking --port 4000
+
+# Configure Roo Code to use proxy
+# Base URL: http://localhost:4000/v1
+```
+
+### Benefits
+- **Cost Control:** Set daily/weekly limits per user
+- **Parameter Mapping:** Fixes max_completion_tokens issues
+- **Analytics:** Detailed usage reports
+- **Failover:** Automatic fallback to backup models
 
 ---
 
@@ -146,34 +188,6 @@ Run this test to verify everything works:
 
 ---
 
-## 🔧 Troubleshooting Installation
-
-### "Invalid API Key" Error
-**Solution**: 
-1. Regenerate key from Kimi dashboard
-2. Ensure no extra spaces
-3. Check key starts with `sk-kimi-`
-
-### "Connection Failed" Error
-**Solution**:
-1. Verify Base URL: `https://api.kimi.com/coding/v1`
-2. Check internet connection
-3. Ensure Legacy Format is **enabled**
-
-### "Model Not Found" Error
-**Solution**:
-1. Confirm Model ID is exactly `kimi-for-coding`
-2. Test with curl command (see Step 3 above)
-3. Check Kimi dashboard for model availability
-
-### High Token Usage Immediately
-**Solution**:
-1. Use `/clear` to reset context
-2. Load only essential files first
-3. Check for redundant information in context
-
----
-
 ## 📊 Expected Results After Installation
 
 ### Successful Configuration
@@ -195,6 +209,7 @@ Run this test to verify everything works:
 2. **Practice context management**: Experiment with file loading order
 3. **Monitor costs**: Use `/cost` regularly to track efficiency
 4. **Optimize workflows**: Apply 18-step horizon to complex tasks
+5. **Consider LiteLLM**: For enterprise deployments with multiple users
 
 ---
 
@@ -202,11 +217,15 @@ Run this test to verify everything works:
 
 If installation issues persist:
 
-1. **Check**: `ZENODO_METADATA_GUIDE_v4.1.0.md` - Troubleshooting section
+1. **Check**: `PLAYBOOK.md` - Troubleshooting section
 2. **Verify**: All steps in this guide completed
 3. **Test**: API connection with curl command
 4. **Review**: Roo Code logs for specific error messages
+5. **Consider**: LiteLLM proxy for complex enterprise setups
 
 ---
 
 **Installation Complete!** You are now ready to use Kimi K2 with Roo Code for token-efficient AI engineering.
+
+**Version**: 4.1.0  
+**Last Updated**: December 12, 2025
