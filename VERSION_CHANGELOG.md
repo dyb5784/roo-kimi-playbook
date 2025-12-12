@@ -5,36 +5,57 @@ All notable changes to the ACP Simulation project will be documented in this fil
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [4.1.3] - 2025-12-12
 
 ### Added
-- Kimi K2 Agent-Tuned Configuration (`docs/PLAYBOOK.md`)
-  - Optimized endpoint: `api.kimi.com/coding/v1` (agent-tuned vs. open platform)
-  - Model specialization: `kimi-for-coding` for 18+ step loops
-  - Token efficiency: 25% reduction through context bias exploitation
-  - Cost governance: ~0.3¢ per 1K tokens with reasoning token monitoring
-  - 18-step horizon management for reliability optimization
-  - Context bias exploitation (top 25% / tail 25% priority loading)
-  - Reasoning toggle strategy (Medium vs Low/Turbo modes)
-  - Go-live checklist for production deployment
+- **`.clinerules`** - Critical instruction set for AI assistants
+  - 95% success threshold within 18 sequential tool calls
+  - 28+ step failure threshold
+  - File size limits (500 lines)
+  - Error loop prevention (max 1 retry)
+  - Boomerang handoff pattern
 
-- Agentic Mesh Configuration Patterns
-  - Automatic task decomposition beyond 18-step threshold
-  - Strategic file loading for context optimization
-  - Legacy format compatibility for Roo Code integration
-  - Session management optimized for Kimi's context handling
+- **`.roo/rules.md`** - Roo Code specific configuration
+  - Financial safety rails ($5/day budget, $10 balance alerts)
+  - Mode engineering (Architect/Code/Orchestrator modes)
+  - Prompt caching strategies (75% target)
+  - Hybrid model strategy (Kimi/DeepSeek)
+  - Performance targets (92% completion, $0.50-$0.75/task)
+  - Error handling & loop prevention
+  - Context management limits (8k tokens routine, 200k+ for reviews)
 
-- Enhanced Documentation
-  - Kimi-specific optimizations guide
-  - Token economics and cost analysis
-  - Troubleshooting for common integration issues
-  - Performance metrics validation (92% task completion rate)
+- **`INSTALLATION_GUIDE.md`** - Complete setup instructions
+  - Roo Code provider configuration
+  - Legacy format enablement (critical)
+  - API verification steps
+  - Troubleshooting section
+  - First test session template
+  - LiteLLM proxy setup (optional enterprise feature)
+
+- **`EVERYDAY_USE_CASES.md`** - 6 practical usage examples
+  - Bug fixes (13K tokens, 11-17 steps)
+  - Test writing (7K tokens, Turbo mode)
+  - Refactoring (28K tokens, requires decomposition)
+  - Code review (20K tokens, 12-20 steps)
+  - Documentation (7K tokens, Turbo mode)
+  - Architecture design (33K tokens, requires decomposition)
 
 ### Changed
-- Updated from Claude Code to Kimi K2 optimizations
-- Token efficiency improved by 25% vs v4.0.0
-- Context management strategy refined for agent-tuned models
-- Cost reduction: ~$0.75 per 1M tokens saved
+- **Removed all Zenodo files** - Focused purely on configuration
+  - Deleted: ZENODO_DESCRIPTION, ZENODO_UPDATE_STEPS, ZENODO_METADATA_GUIDE
+  - Deleted: ZENODO_TROUBLESHOOTING, README_ZENODO
+  - Repository now contains only essential configuration and documentation
+
+- **Updated README.md** - Clear copy-paste instructions
+  - What to copy to your project
+  - Configuration files explained
+  - Documentation guide
+  - Quick start workflow
+
+- **Streamlined package** - Only essential files for users
+  - 7 files total (was 10)
+  - ~35 KB total size (was ~74 KB)
+  - Focus on actionable configuration templates
 
 ### Performance Metrics
 - **Task completion rate**: 92% (vs 85% baseline in v4.0.0)
