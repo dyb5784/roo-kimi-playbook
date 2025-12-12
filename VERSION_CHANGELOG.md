@@ -1,6 +1,6 @@
 # Version Changelog
 
-All notable changes to the ACP Simulation project will be documented in this file.
+All notable changes to the Kimi K2 & Roo Code Playbook will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
@@ -171,55 +171,18 @@ This project follows [Semantic Versioning](https://semver.org/):
 - **MINOR** version: New features, backward-compatible
 - **PATCH** version: Bug fixes, backward-compatible
 
-### Current Version: 3.1.0 (Unreleased)
+**Current Version**: 4.1.3
 
-**Breaking Changes:**
-- None expected, additions only
-
-**New Features:**
-- Python Scientific Computing skill
-- Pre-commit validation hooks
-- Research validation workflow
-- Enhanced reproducibility tooling
-
-**Improvements:**
-- Better documentation for scientific Python
-- Standardized commit format
-- Automated quality checks
-
----
-
-## Release Process
-
-1. Update version number in:
-   - `README.md`
-   - `CLAUDE.md`
-   - `VERSION_CHANGELOG.md`
-   - `pyproject.toml` (if exists)
-
-2. Run full validation:
-   ```bash
-   pytest tests/ -v
-   mypy src/ --strict
-   flake8 src/
-   python scripts/verify_reproducibility.py
-   ```
-
-3. Commit with version tag:
-   ```bash
-   git add .
-   git commit -m "release: version X.Y.Z"
-   git tag -a vX.Y.Z -m "Version X.Y.Z - <summary>"
-   ```
-
-4. Push to repository:
-   ```bash
-   git push origin master
-   git push origin vX.Y.Z
-   ```
+**Release Process**:
+1. Update version number in `README.md` and `VERSION_CHANGELOG.md`
+2. Commit changes: `git commit -m "release: version X.Y.Z"`
+3. Create tag: `git tag -a vX.Y.Z -m "Version X.Y.Z"`
+4. Push to repository: `git push origin master && git push origin vX.Y.Z`
+5. Create GitHub release with release notes
 
 ## Links
 
-- [GitHub Repository](https://github.com/dyb5784/acp-simulation)
-- [Issues](https://github.com/dyb5784/acp-simulation/issues)
-- [Documentation](https://github.com/dyb5784/acp-simulation/blob/master/README.md)
+- [GitHub Repository](https://github.com/dyb5784/roo-kimi-playbook)
+- [Latest Release](https://github.com/dyb5784/roo-kimi-playbook/releases/tag/v4.1.3)
+- [Issues](https://github.com/dyb5784/roo-kimi-playbook/issues)
+- [Documentation](https://github.com/dyb5784/roo-kimi-playbook/blob/master/README.md)
