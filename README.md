@@ -1,8 +1,10 @@
-# Kimi K2 & Roo Code Playbook v4.1.0
+# Kimi K2 & Roo Code Playbook v4.1.3
 
 **Practitioner's Playbook: Agentic Mesh Configuration for Kimi K2 & Roo Code**
 
 Complete configuration guide for optimizing Kimi K2's agent-tuned model with Roo Code.
+
+**Latest Release**: v4.1.3 (Enhanced with Kimi K2 efficiency optimizations)
 
 ## 📦 Package Contents
 
@@ -144,6 +146,7 @@ For issues or questions:
 
 MIT License
 
-**Version**: 4.1.0  
-**Date**: December 12, 2025  
+**Version**: 4.1.3
+**Date**: December 12, 2025
 **Repository**: https://github.com/dyb5784/roo-kimi-playbook
+**Release**: https://github.com/dyb5784/roo-kimi-playbook/releases/tag/v4.1.3
