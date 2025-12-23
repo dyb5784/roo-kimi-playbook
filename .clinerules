@@ -3,8 +3,10 @@
 2. **VERIFY FIRST:** Your first tool call MUST be `read_file("CONTEXT.md")`.
 3. **18-STEP LIMIT:** If a task exceeds 18 tool calls, STOP and ask for a sub-task breakdown.
 4. **NO RAW DUMPS:** Output *Specifications* or *Diffs* only.
+5. **95% SUCCESS THRESHOLD:** Maintain >95% success rate within 18 sequential tool calls; failure climbs at 28+ steps.
 
 
 ## 🔄 The "Boomerang" Handoff
+* **Orchestrator:** Expect a "Boomerang" return (Summary + Test Result).
 * **Orchestrator:** Expect a "Boomerang" return (Summary + Test Result).
 * **Code Node:** Return results immediately. Do not hold context open.
